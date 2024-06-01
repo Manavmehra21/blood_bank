@@ -1,0 +1,69 @@
+<%- include('includes/header') %>
+<%- include('includes/nav-dashboard') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blood Bank System</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+	
+        
+		    
+
+<div class="content-wrap">
+    <h1 class="text-center">Login</h1>
+    <div class="login-container">
+        <form action="loginsubmituser" method="POST" enctype="multipart/form-data">
+           <div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Username </label>
+                    </div>
+                    <div class="col-10">
+                        <input id="username" class="txtinput" placeholder="username" type="text" name="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Password</label>
+                    </div>
+                    <div class="col-10">
+                        <input id="password" class="txtinput" placeholder="password" type="password" name="password">
+                    </div>
+                </div>
+            </div>
+           <div class="row">
+                    <div class="col-2">
+                       
+                    </div>
+                    <div class="col-10">
+                       <a href="signupUser" class="text-right d-block">Don't have an account? Sign Up</a>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div>
+                        <% 
+                            if(typeof(error) != 'undefined'){
+                                %>
+                               <div class="error"> <%= error%> </p>
+                                <%
+                        } %>
+                            
+                    </div>
+                    <br/>
+                    <input type="submit" value="Submit" class="login">
+                   
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+<%- include('includes/footer') %>
+            

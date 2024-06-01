@@ -1,0 +1,70 @@
+<%- include('includes/header') %>
+<%- include('includes/nav-dashboard') %>
+
+<div class="container-fluid ">
+    <div class="row bg-red justify-content-center">
+        <div class="col-md-10 ">
+            <div class="row align-items-center py-4 justify-content-around">
+                <div class="col-md-2 step-list text-white text-center">
+                    <i class="fa fa-location-dot font-40"></i>
+                    <p class="mt-2  mb-0">Location</p>
+                </div>
+                <div class=" col-md-2  step-list text-white text-center">
+                    <i class="fa fa-hospital font-40"></i>
+                    <p class="mt-2 mb-0">Donor Centre</p>
+                </div>
+                <div class="col-md-2 step-list text-white text-center">
+                    <i class="fa fa-calendar-days font-40 "></i>
+                    <p class="mt-2 mb-0">Date and Time</p>
+                </div>
+                <div class="col-md-2  step-list text-white text-center">
+                    <i class="fa fa-receipt font-40"></i>
+                    <p class="mt-2 mb-0">Review and book</p>
+                </div>
+                <div class="col-md-2  step-list text-white text-center">
+                    <i class="fa fa-circle-check font-40"></i>
+                    <p class="mt-2 mb-0">Complete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-light">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Blood donation: Book appointment</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-8 bg-white shadow">
+                <p class="border-bottom py-3">Please review your booking information and click "Book Now" to complete your appointment booking. You will receive a confirmation email with your appointment details after you submit your booking request.</p>
+                <div class="row">
+                    <div class="col-md-6 text-left border-right py-5">
+                        <h6><b>Canadian Blood Services, Calgary</b></h6>
+                      <p>200 Barclay Parade SW #202<br/>
+                      Calgary, AB, T2P 4R5</p>
+                      <a href="#" class="btn-red mt-3 d-inline-block">DIRECTION</a>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.3856086862643!2d-80.40696748503356!3d43.389869077437574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b9018e9e89adf%3A0x2043c24369ede07e!2sConestoga%20College%20Kitchener%20-%20Doon%20Campus!5e0!3m2!1sen!2sin!4v1678814098141!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mt-3"></iframe>
+                    </div>
+                    <div class="col-md-6 text-center py-5">
+                        <h6 class="text-red">Booking Detail</h6>
+                      <p>(Click to view other available dates)</p>
+                      <div class="border p-4">	
+                          <img src="/images/schedule.png" width="75px">
+                          <p class="mt-3">Tuesday, Mar. 14, 2023</p>
+                          <p class="mt-2 p-2 border">2:00 PM</p>
+                      </div>
+                      <div>
+                          <a href="#" class="btn-red mt-3 d-inline-block">Book Now</a>
+                      </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

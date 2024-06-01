@@ -1,0 +1,117 @@
+<%- include('includes/header') %>
+<%- include('includes/nav-dashboard') %>
+<div class="container-fluid ">
+    <div class="row bg-red justify-content-center">
+        <div class="col-md-10 ">
+            <div class="row align-items-center py-4 justify-content-around">
+                <div class="col-md-2 step-list text-white text-center">
+                    <i class="fa fa-location-dot font-40"></i>
+                    <p class="mt-2  mb-0">Location</p>
+                </div>
+                <div class=" col-md-2  step-list text-white text-center">
+                    <i class="fa fa-hospital font-40"></i>
+                    <p class="mt-2 mb-0">Donor Centre</p>
+                </div>
+                <div class="col-md-2 step-list text-white text-center">
+                    <i class="fa fa-calendar-days font-40 "></i>
+                    <p class="mt-2 mb-0">Date and Time</p>
+                </div>
+                <div class="col-md-2  step-list text-white text-center">
+                    <i class="fa fa-receipt font-40"></i>
+                    <p class="mt-2 mb-0">Review and book</p>
+                </div>
+                <div class="col-md-2  step-list text-white text-center">
+                    <i class="fa fa-circle-check font-40"></i>
+                    <p class="mt-2 mb-0">Complete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-light">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Blood donation: Select an available time</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-8 bg-white shadow">
+                <h4 class="text-red border-bottom py-3">Select Date and Time</h4>
+                <div>
+                    Put calender here
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+<div class="content-wrap">
+    
+    <div class="login-container">
+        <form action="bookappointment" method="POST" enctype="multipart/form-data">
+           <div>
+            <input type="hidden" id="bloodbankid" value="<%= bloodbankData._id %>" name="bloodbankid">
+            <input type="hidden" id="bloodbankname" value="<%= bloodbankData.name %>" name="bloodbankname">
+            <input type="hidden" id="bloodbankaddress1" value="<%= bloodbankData.address1 %>" name="bloodbankaddress1">
+            <input type="hidden" id="bloodbankcity" value="<%= bloodbankData.city %>" name="bloodbankcity">
+            <input type="hidden" id="bloodbankprovince" value="<%= bloodbankData.province %>" name="bloodbankprovince">
+            <input type="hidden" id="bloodbankpostalcode" value="<%= bloodbankData.postalCode %>" name="bloodbankpostalcode">
+            <input type="hidden" id="bloodbankphonenumber" value="<%= bloodbankData.phoneNumber %>" name="bloodbankphonenumber">
+            <input type="hidden" id="bloodbankemail" value="<%= bloodbankData.email %>" name="bloodbankemail">
+            
+            <div class="nameOfBloodBank"><%= bloodbank.name %></div>
+            <div class="address">
+              <%= bloodbank.address1 %> 
+              <%- '<br>'  %>
+              <%= bloodbank.city
+              %>, <%= bloodbank.province %>, <%= bloodbank.postalCode.toUpperCase() %>
+              <%- '<br>'  %>
+            </div>
+            
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-8">
+                        <input id="date" class="txtinput" placeholder="Select date" type="datetime-local" name="date">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div>
+                        <% 
+                            if(typeof(error) != 'undefined'){
+                                %>
+                               <div class="error"> <%= error%> </p>
+                                <%
+                        } %>
+                            
+                    </div>
+                    <br/>
+                    <input type="submit" value="Submit" class="login">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var dtToday = new Date();
+     
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+         day = '0' + day.toString();
+        var maxDate = year + '-' + month + '-' + day;
+        $('#date').attr('min', maxDate);
+    });
+</script> 
+<%- include('includes/footer') %>
+            

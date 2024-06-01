@@ -1,0 +1,33 @@
+<%- include('includes/header') %>
+<%- include('includes/nav-dashboard') %>
+<div class="content-wrap">
+	<main>
+      <h1>Units of blood available</h1>
+	  <table class="customers">
+		
+		<tr>
+			<th>A+</th>
+			<th>A-</th>
+			<th>B+</th>
+			<th>B-</th>
+			<th>O+</th>
+			<th>O-</th>
+			<th>AB+</th>
+			<th>AB-</th>
+			
+		</tr>
+		<tr>
+			<td><%= bloodbanktype.A_Positive %></td>
+			<td><%= bloodbanktype.A_Negative %></td>
+			<td><%= bloodbanktype.B_Positive %></td>
+			<td><%= bloodbanktype.B_Negative %></td>
+			<td><%= bloodbanktype.O_Positive %></td>
+			<td><%= bloodbanktype.O_Negative %></td>
+			<td><%= bloodbanktype.AB_Positive %></td>
+			<td><%= bloodbanktype.AB_Negative %></td>
+		</tr>
+
+	</main>
+</div>
+<%- include('includes/footer') %>
+            

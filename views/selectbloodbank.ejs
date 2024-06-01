@@ -1,0 +1,101 @@
+<%- include('includes/header') %> 
+<%- include('includes/user-nav-dashboard') %>
+
+<div class="container-fluid ">
+  <div class="row bg-red justify-content-center">
+      <div class="col-md-10 ">
+          <div class="row align-items-center py-4 justify-content-around">
+              <div class="col-md-2 step-list text-white text-center">
+                  <i class="fa fa-location-dot font-40"></i>
+                  <p class="mt-2  mb-0">Location</p>
+              </div>
+              <div class=" col-md-2  step-list text-white text-center">
+                  <i class="fa fa-hospital font-40"></i>
+                  <p class="mt-2 mb-0">Donor Centre</p>
+              </div>
+              <div class="col-md-2 step-list text-white text-center">
+                  <i class="fa fa-calendar-days font-40 "></i>
+                  <p class="mt-2 mb-0">Date and Time</p>
+              </div>
+              <div class="col-md-2  step-list text-white text-center">
+                  <i class="fa fa-receipt font-40"></i>
+                  <p class="mt-2 mb-0">Review and book</p>
+              </div>
+              <div class="col-md-2  step-list text-white text-center">
+                  <i class="fa fa-circle-check font-40"></i>
+                  <p class="mt-2 mb-0">Complete</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-light">
+  <div class="container py-3">
+      <div class="row">
+          <div class="col-md-12">
+              <h3>Blood donation: Select a donor centre</h3>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row mt-4 justify-content-center">
+      <div class="col-md-8 bg-white shadow">
+              <h4 class="text-red border-bottom py-3">Canadian Blood Services, Calgary</h4>
+              <div class="row">
+                  <div class="col-md-5 text-center border-right py-5">
+                      <h6><b>Location address</b></h6>
+                    <p>Canadian Blood Services, Calgary<br/>
+                    200 Barclay Parade SW #202<br/>
+                    Calgary, AB, T2P 4R5</p>
+                    <a href="#" class="btn-red mt-3 d-inline-block">DIRECTION</a>
+                  </div>
+                  <div class="col-md-7 text-center py-5">
+                      <h6 class="text-red">Next Available Appointment</h6>
+                    <p>(Click to view other available dates)</p>
+                    <select name="date" class="form-select">
+                        <option>Tuesday, Mar. 14, 2023</option>
+                        <option>Wednesday, Mar. 15, 2023</option>
+                        <option>Thursday, Mar. 16, 2023</option>
+                    </select>
+                    <div>
+                        <a href="#" class="btn-red mt-3 d-inline-block">SELECT</a>
+                    </div>
+                  </div>
+              </div>
+      </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+  <main>
+    <% for(bloodbank of bloodbanks) { %>
+    <div class="DivContainer">
+      <div class="cardAppointment">
+        <div class="container">
+          <div class="nameOfBloodBank"><%= bloodbank.name %></div>
+          <div class="address">
+            <%= bloodbank.address1 %> 
+            <%- '<br>'  %>
+            <%= bloodbank.city
+            %>, <%= bloodbank.province %>, <%= bloodbank.postalCode.toUpperCase() %>
+            <%- '<br>'  %>
+
+            <!-- <button class="button"> Directions </button> -->
+
+            <a href="/select/<%= bloodbank._id %>" class="button"> Select Date for booking </a>
+
+
+            <!-- http://maps.google.com/maps?daddr=94%20Bridgeport%20Rd%20E%2C%20Waterloo%2C%20ON%2C%20N2J%202J9%2C%20Canada -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </main>
+</div>
+<%- include('includes/footer') %>
+
+
